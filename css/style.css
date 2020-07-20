@@ -1,0 +1,67 @@
+html, body, #content{
+    height: 100%;
+}
+
+
+#navbar{
+    float:right;
+}
+
+li > a, #search > a{
+    font-size: large;
+    text-decoration: none;
+}
+
+li > a{
+    color: #de3c44;
+}
+
+#search > a{
+    color: white;
+}
+#search{
+    display:inline-block;
+    border-top: 5px;
+    font-size: 0;
+}
+#search > a{
+    background-color:#0066cc;
+    padding-top:4px;
+    padding-bottom:7px;
+    padding-left:5px;
+}
+
+#search-input{
+    height: 25px;
+}
+ 
+
+#title{
+    float:left;
+    margin: 5px;
+}
+
+#title > h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin:5px;
+}
+
+#head{
+    display:block;
+    background-color:#00cc99;
+    height: 5%;
+}
+
+nav > ul{
+    list-style:none;
+    margin:10px;
+}
+i{
+    padding-right:5px;
+}
+
+nav > ul > li{
+    display: inline-block;
+    padding-right: 5px;
+}
