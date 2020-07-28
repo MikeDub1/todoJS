@@ -83,7 +83,8 @@ nav > ul > li{
 }
 #notebook-left{
     display:block;
-    overflow:auto;
+    overflow-x:hidden;
+    overflow-y:auto;
     border-top-left-radius: 3vw;
     border-bottom-left-radius: 3vw;
     box-shadow: -1vw 0 15px 5px grey;
@@ -118,4 +119,52 @@ nav > ul > li{
 
 td{
     font-size:20px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  #overlay_content{
+      display: flex;
+      width: 30%;
+      height: 50%;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #addTodo{
+      width: 50%;
+      height: 50%;
+  }
+
+  #addTodo > input[type="text"]{
+      background-color: grey;
+      opacity:30%;
+      border: 0;
+      float: right;
+      clear: both;
+      position: relative;
+  }
+
+  #addTodo > input[type="text"]:after{
+    content: '';
+    display: block;
+    width:70%;
+    height: 10px;
+    background-color: #de3c44;
+    position: absolute;
+    bottom:0;
 }

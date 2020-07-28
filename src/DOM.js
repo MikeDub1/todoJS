@@ -6,6 +6,7 @@ export function insertTodo(newTodo)
     let descriptionDiv = document.createElement("div");
     let p = document.createElement("p");
     let table_div = document.createElement("div");
+    let filled = "100%";
 
     p.textContent = newTodo.pname + "\n";
     p.style.marginBottom = "15px";
@@ -18,12 +19,12 @@ export function insertTodo(newTodo)
     table_div.style.justifyContent = "center";
     table_div.style.alignItems = "center";
     table_div.style.height = "50%";
-    table_div.style.width = "100%";
+    table_div.style.width = filled;
     
 
     p.style.fontSize = "25px";
     newDiv.style.height = "13%";
-    newDiv.style.width = "100%";
+    newDiv.style.width = filled;
     newDiv.appendChild(table_div);
     newDiv.style.borderBottom = "solid";
     leftNotebook.appendChild(newDiv);
