@@ -121,7 +121,7 @@ td{
     font-size:20px;
 }
 
-#overlay {
+.overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -133,6 +133,23 @@ td{
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+  }
+
+  @keyframes fade-in{
+      0%{
+          opacity: 0;
+      }
+      100%{
+          opacity: 1;
+      }
+  }
+  @keyframes fade-out{
+      0%{
+          opacity: 1;
+      }
+      100%{
+          opacity: 0;
+      }
   }
 
   #overlay_content{
@@ -151,20 +168,19 @@ td{
   }
 
   #addTodo > input[type="text"]{
-      background-color: grey;
-      opacity:30%;
-      border: 0;
+      background-color: lightgray;
+      border-top-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 5px;
+      border-bottom-color: red;
       float: right;
       clear: both;
       position: relative;
   }
 
-  #addTodo > input[type="text"]:after{
-    content: '';
-    display: block;
-    width:70%;
-    height: 10px;
-    background-color: #de3c44;
-    position: absolute;
-    bottom:0;
-}
+  /* .animate-visibility{
+      opacity: 1;
+      display: flex;
+  } */
+

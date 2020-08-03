@@ -1,7 +1,25 @@
 const DOM = require('./DOM.js');
-document.getElementById("plus").onclick = on;
-document.getElementById("submit_button").onclick = off;
 
+function setUp(){
+    document.getElementById("plus").onclick = on;
+    document.getElementById("submit_button").onclick = off;
+    document.getElementById("cancelAdd").onclick = cancelAdd;
+}
+
+function addVisibility(overlay)
+{
+    overlay.removeEventListener('animationend', removeVisibility);
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+}
+
+function removeVisibility(e)
+{
+    let overlay = e.srcElement;
+    overlay.style.display = "none";
+    overlay.style.visibility = "hidden";
+}
 
 
 function TodoElement(pname, pstart, pend, ppriority, pdesc)
@@ -16,18 +34,14 @@ function createTodo(pname, pstart, pend, ppriority, pdesc)
 }
 
 function on() {
-    let overlay = document.getElementById("overlay");
-    let todoList = document.getElementById("addTodo");
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
-
-
-
+    let overlay = document.getElementsByClassName("overlay")[0];
+    addVisibility(overlay);
+    overlay.style.visibility = "visible";
+    overlay.style.animation = "fade-in 500ms";
 }
   
 function off(){
-    document.getElementById("overlay").style.display = "none";
+    let overlay = document.getElementsByClassName("overlay")[0];
     let pname = document.getElementById("pname").value;
     let pdesc= document.getElementById("pdesc").value;
     let pstart = document.getElementById("pstart").value;
@@ -38,6 +52,17 @@ function off(){
     else if(document.getElementById("mediumPriority").checked) {ppriority = document.getElementById("mediumPriority").value;}
     else if(document.getElementById("highPriority").checked) {ppriority = document.getElementById("highPriority").value;}
     createTodo(pname, pstart, pend, ppriority, pdesc);
+    overlay.style.animation = "fade-out 500ms";
+    overlay.addEventListener('animationend', removeVisibility);
     
-
 }
+
+function cancelAdd()
+{
+    let overlay = document.getElementsByClassName("overlay")[0];
+    overlay.style.animation = "fade-out 500ms";
+    overlay.addEventListener('animationend', removeVisibility);
+    
+}
+
+setUp();

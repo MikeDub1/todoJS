@@ -65,3 +65,16 @@ function createTable(newTodo)
 
     return table;
 }
+
+export function addAnimations(elementID, animations)
+{
+    let element = document.getElementById(elementID);
+    if (element == null) element = document.getElementsByClassName(elementID)[0];
+
+    for(let animation_i = 0; animation_i < animations.length; animation_i++)
+    {
+        let a = animations[animation_i];
+
+        element.classList.add(a);
+    }
+}
