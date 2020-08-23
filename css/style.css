@@ -179,6 +179,13 @@ td{
       position: relative;
   }
 
+  #errorForm{
+      display: flex;
+      padding-top: 1vh;
+      text-align: center;
+      visibility: hidden;
+  }
+
   /* .animate-visibility{
       opacity: 1;
       display: flex;

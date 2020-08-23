@@ -78,3 +78,10 @@ export function addAnimations(elementID, animations)
         element.classList.add(a);
     }
 }
+
+export function displayFormError(message)
+{
+    let errorForm = document.getElementById("errorForm");
+    errorForm.textContent = message;
+    errorForm.style.visibility = "visible";
+}
